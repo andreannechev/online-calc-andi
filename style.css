@@ -29,6 +29,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+input {border:0}
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,400,600');
 
