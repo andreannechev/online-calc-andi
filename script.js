@@ -17,8 +17,13 @@ for (var i = 0; i < cifArr.length; i++)
 */
 
 // add function
-var num1 = undefined;
+var num = "";
+var num1 = "";
+//var num1 = []; // store as array
 var num2 = undefined;
+var operator = "";
+var result = undefined;
+
 function add(num1, num2) {
   return(num1 + num2);
 }
@@ -33,25 +38,31 @@ function devide(num1, num2) {
 }
 // add number listener
 $("#1").click(function() {
-  console.log($(this).attr("value"));
+$("#screen").append($(this).attr("value"));
+num += $(this).attr("value");
+//num1.push($(this).attr("value"));//store as array
+console.log(num);
+
 });
 $("#2").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
+  num += $(this).attr("value");
+  console.log(num);
 });
 $("#3").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#4").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#5").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#6").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#7").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#8").click(function() {
   //$("#screen").html('');
@@ -61,24 +72,38 @@ $("#9").click(function() {
   $("#screen").append($(this).attr("value"));
 });
 $("#0").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#decimal").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
+
 // add operator listener
 $("#devide").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#multiply").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#subtract").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").append($(this).attr("value"));
 });
 $("#add").click(function() {
-  console.log($(this).attr("value"));
+  $("#screen").html("");
+  num1 = parseInt(num);
+  num = "";
+  operator = $(this).attr("value");
 });
+
+// add equal listener
+
+$("#equal").click(function() {
+  num2 = parseInt(num);
+  result = add(num1, num2);
+  $("#screen").html(result);
+  //console.log(result);
+});
+
 
 // store pressed buttons in array
 
