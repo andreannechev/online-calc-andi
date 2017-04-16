@@ -19,10 +19,10 @@ for (var i = 0; i < cifArr.length; i++)
 // add function
 var num = "";
 var num1 = "";
-//var num1 = []; // store as array
 var num2 = undefined;
 var operator = "";
 var result = undefined;
+
 
 function add(num1, num2) {
   return(num1 + num2);
@@ -36,47 +36,20 @@ function multiply(num1, num2) {
 function devide(num1, num2) {
   return(num1 / num2);
 }
-// add number listener
-$("#1").click(function() {
-$("#screen").append($(this).attr("value"));
-num += $(this).attr("value");
-//num1.push($(this).attr("value"));//store as array
-console.log(num);
+var cifArr = ["#0", "#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8", "#9", "#decimal"];
 
-});
-$("#2").click(function() {
-  $("#screen").append($(this).attr("value"));
-  num += $(this).attr("value");
-  console.log(num);
-});
-$("#3").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#4").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#5").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#6").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#7").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#8").click(function() {
-  //$("#screen").html('');
-  $("#screen").append($(this).attr("value"));
-});
-$("#9").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#0").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
-$("#decimal").click(function() {
-  $("#screen").append($(this).attr("value"));
-});
+// add number listener
+for (var i = 0; i < cifArr.length; i++) {
+
+    $(cifArr[i]).click(function() {
+    $("#screen").append($(this).attr("value"));
+    num += $(this).attr("value");
+    console.log(num);
+  });
+}
+
+
+
 
 // add operator listener
 $("#devide").click(function() {
@@ -90,7 +63,7 @@ $("#subtract").click(function() {
 });
 $("#add").click(function() {
   $("#screen").html("");
-  num1 = parseInt(num);
+  num1 = parseFloat(num);
   num = "";
   operator = $(this).attr("value");
 });
@@ -98,11 +71,20 @@ $("#add").click(function() {
 // add equal listener
 
 $("#equal").click(function() {
-  num2 = parseInt(num);
+  num2 = parseFloat(num);
   result = add(num1, num2);
   $("#screen").html(result);
   //console.log(result);
 });
+
+// clear button
+$("#clear").click(function() {
+    $("#screen").empty();
+    num = 0;
+    console.log(num);
+  //console.log(result);
+});
+
 
 
 // store pressed buttons in array
